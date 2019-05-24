@@ -18,16 +18,6 @@ use yii\helpers\Url;
                 <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
             </div>
         </div>
-        <!-- search form -->
-        <form action="#" method="get" class="sidebar-form">
-            <div class="input-group">
-                <input type="text" name="q" class="form-control" placeholder="Search...">
-                <span class="input-group-btn">
-                    <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i></button>
-                </span>
-            </div>
-        </form>
-        <!-- /.search form -->
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <?=
         Menu::widget(
@@ -39,32 +29,35 @@ use yii\helpers\Url;
                             'url' => ['/'], 'active' => $this->context->route == 'site/index'
                         ],
                         [
-                            'label' => 'Master',
-                            'icon' => 'fa fa-database',
-                            'url' => '#',
-                            'items' => [
-                                [
-                                    'label' => 'Master1',
-                                    'icon' => 'fa fa-database',
-                                    'url' => '?r=master1/',
-				    'active' => $this->context->route == 'master1/index'
-                                ],
-                                [
-                                    'label' => 'Master2',
-                                    'icon' => 'fa fa-database',
-                                    'url' => '?r=master2/',
-				    'active' => $this->context->route == 'master2/index'
-                                ]
-                            ]
-                        ],
-                        [
                             'label' => 'Users',
                             'icon' => 'fa fa-users',
                             'url' => ['/user'],
                             'active' => $this->context->route == 'user/index',
                         ],
-                        ['label' => 'Gii', 'icon' => 'fa fa-file-code-o', 'url' => ['/gii'],],
-                        ['label' => 'Debug', 'icon' => 'fa fa-dashboard', 'url' => ['/debug'],],
+                        [
+                            'label' => 'Item',
+                            'icon' => 'fa fa-shopping-cart',
+                            'url' => ['/item'],
+                            'active' => $this->context->route == 'item/index',
+                        ],
+                        [
+                            'label' => 'Category',
+                            'icon' => 'fa fa-clone',
+                            'url' => ['/category'],
+                            'active' => $this->context->route == 'category/index',
+                        ],
+                        [
+                            'label' => 'Order',
+                            'icon' => 'fa fa-industry',
+                            'url' => ['/orders'],
+                            'active' => $this->context->route == 'order/index',
+                        ],
+                        [
+                            'label' => 'Order Item',
+                            'icon' => 'fa fa-cart-arrow-down',
+                            'url' => ['/order-item'],
+                            'active' => $this->context->route == 'order-item/index',
+                        ],
                     ],
                 ]
         )
